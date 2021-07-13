@@ -12,7 +12,7 @@ Here are the proposed structure: `under construction`
 
 ```
 src
-  - /domains // Non-reusable components
+  - /domain // Non-reusable components
   - /components // Reusable components
   - /routes // Routes folder
 ```
@@ -36,8 +36,6 @@ or using modularization
       - /Footer
         - index.tsx
         - styles.ts
-
-  - /components
     - /Form
       - /Input
         - index.tsx

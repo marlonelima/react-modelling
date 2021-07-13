@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const { program } = require("commander");
 
-program.version("0.0.143");
+program.version("0.0.144");
 
 const create = require("./src/scripts/create");
 
