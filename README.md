@@ -3,13 +3,16 @@
 `This library is only preview at the moment`
 <br/><br/>
 
+`npm i -g react-modelling`
+<br>
+
 What is the problem in React? Your projects quickly and easily can become a trash. Disorganization reigns because there is no a main pattern to React. And in a big team? Nobody can understand that structure. And what about writing boilerplates to create components or router all the time? React Modelling solves all of these organization problems using the CLI.
 
-Here are the proposed structure:
+Here are the proposed structure: `under construction`
 
 ```
 src
-  - /domains // Not resusable components
+  - /domains // Non-reusable components
   - /components // Reusable components
   - /routes // Routes folder
 ```
@@ -48,7 +51,7 @@ or using modularization
 
 ### CLI Commands
 
-You can use in your terminal, the commands `react-modelling`, `react-m` or `r-m` to call the React Modelling.
+You can use in your terminal, the commands `remod`, `react-modelling`, `react-m` or `r-m` to call the React Modelling.
 
 #### Page
 

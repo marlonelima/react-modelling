@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const { program } = require("commander");
 
-program.version("0.0.12");
+program.version("0.0.143");
 
 const create = require("./src/scripts/create");
 
@@ -32,7 +32,7 @@ program
 program
   .command("page <name>")
   .option("-m <module>", "create component inside a module")
-  .description("manage react-router-dom")
+  .description("manage pages of your application")
   .action((name, args) => {
     return create.page(name, args.m);
   });
