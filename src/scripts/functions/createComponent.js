@@ -20,7 +20,7 @@ function create(name, module, domain = false) {
   });
 
   if (fs.existsSync(indexFile)) {
-    return console.log("Error: Component already exists!");
+    return console.log("\x1b[31m%s\x1b[0m", "Error: Component already exists!");
   }
 
   fs.writeFileSync(
@@ -35,7 +35,7 @@ function create(name, module, domain = false) {
     recursive: false,
   });
 
-  return console.log("OK!");
+  return console.log("\x1b[32m", "OK!");
 }
 
 module.exports = create;

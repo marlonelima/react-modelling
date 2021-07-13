@@ -1,4 +1,4 @@
-### A CLI that gives opinion
+### A CLI that gives opinion to React
 
 `This library is only preview at the moment`
 <br/><br/>
@@ -48,7 +48,7 @@ or using modularization
 
 ### CLI Commands
 
-You can use in your terminal, the commands `r--` or `r-m` to call the React modulling.
+You can use in your terminal, the commands `react-modelling`, `react-m` or `r-m` to call the React Modelling.
 
 #### Page
 

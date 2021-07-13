@@ -20,7 +20,7 @@ function create(name, module) {
   });
 
   if (fs.existsSync(indexFile)) {
-    return console.log("Error: Page already exists!");
+    return console.log("\x1b[31m%s\x1b[0m", "Error: Page already exists!");
   }
 
   fs.writeFileSync(indexFile, TypescriptModels.page(normalizedPageName), {
@@ -30,7 +30,7 @@ function create(name, module) {
     recursive: false,
   });
 
-  return console.log("OK!");
+  return console.log("\x1b[32m", "OK!");
 }
 
 module.exports = create;
