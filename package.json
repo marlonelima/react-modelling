@@ -1,0 +1,19 @@
+{
+  "name": "react-modulling",
+  "version": "0.0.148",
+  "main": "cli.js",
+  "license": "MIT",
+  "scripts": {
+    "main": "node cli.js"
+  },
+  "dependencies": {
+    "commander": "^8.0.0"
+  },
+  "bin": {
+    "react-modulling": "./cli.js",
+    "react-m": "./cli.js",
+    "r-m": "./cli.js",
+    "r-modulling": "./cli.js"
+  },
+  "preferGlobal": true
+}
