@@ -58,13 +58,13 @@ You can use in your terminal, the commands `remod`, `react-modelling`, `react-m`
 To create a new page
 
 ```
-r-m page <name>
+remod page <name>
 ```
 
 or you can create inside a module
 
 ```
-r-m page <name> -m <module-name>
+remod page <name> -m <module-name>
 ```
 
 <br>
@@ -74,7 +74,7 @@ r-m page <name> -m <module-name>
 To create a new component
 
 ```
-r-m component <name>
+remod component <name>
 ```
 
 Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-usable component.
@@ -82,7 +82,7 @@ Use the flag `-r` to generate an reusable component and `-u` for a non-reusable 
 or you can create inside a module
 
 ```
-r-m component <name> -m <module-name>
+remod component <name> -m <module-name>
 ```
 
 <br>
@@ -92,5 +92,5 @@ r-m component <name> -m <module-name>
 To create a new router
 
 ```
-r-m router --init
+remod router --init
 ```
