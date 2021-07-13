@@ -44,6 +44,8 @@ or using modularization
         - styles.ts
 ```
 
+<br/>
+
 ### CLI Commands
 
 You can use in your terminal, the commands `r--` or `r-m` to call the React modulling.
@@ -62,6 +64,8 @@ or you can create inside a module
 r-m page <name> -m <module-name>
 ```
 
+<br>
+
 #### Components
 
 To create a new component
@@ -77,6 +81,8 @@ or you can create inside a module
 ```
 r-m component <name> -m <module-name>
 ```
+
+<br>
 
 #### Router
 
