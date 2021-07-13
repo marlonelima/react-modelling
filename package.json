@@ -1,6 +1,6 @@
 {
-  "name": "react-modulling",
-  "version": "0.0.148",
+  "name": "react-modelling",
+  "version": "0.0.1",
   "main": "cli.js",
   "license": "MIT",
   "scripts": {
@@ -13,6 +13,7 @@
     "react-modulling": "./cli.js",
     "react-m": "./cli.js",
     "r-m": "./cli.js",
+    "r--": "./cli.js",
     "r-modulling": "./cli.js"
   },
   "preferGlobal": true
