@@ -36,7 +36,7 @@ module.exports = (isTypescript) => {
     recursive: false,
     force: true,
   });
-  fs.rmSync(path.join(baseDirectory, `reportWebVitals.${language}`), {
+  fs.rmSync(path.join(baseDirectory, `reportWebVitals.${languagePrefix}`), {
     recursive: false,
     force: true,
   });

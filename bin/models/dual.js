@@ -24,17 +24,17 @@ export const ${name} = () => {
   },
 
   router() {
-    return `import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+    return `import { BrowserRouter as ReactRouter, Route, Switch } from "react-router-dom";
 
 const YourComponent = () => (<div>React-router-dom works!!</div>)
 
 export const Router = () => {
   return (
-    <Router> 
+    <ReactRouter> 
       <Switch>
         <Route exact path="/" component={YourComponent}/>
       </Switch>
-    </Router>
+    </ReactRouter>
   );
 }`;
   },
