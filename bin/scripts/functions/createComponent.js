@@ -1,13 +1,16 @@
 const fs = require("fs");
 const DualModels = require("../../models/dual");
-const { normalizeString } = require("../../utils/formatters");
+const {
+  normalizeString,
+  normalizeDirectory,
+} = require("../../utils/formatters");
 
 module.exports = (name, module, unique, isTypescript) => {
   const normalizedComponentName = normalizeString(name);
 
   const baseDirectory = `src/${unique ? "domain" : "components"}`;
 
-  const moduleIfSetted = module ? `${normalizeString(module)}/` : "";
+  const moduleIfSetted = module ? `${normalizeDirectory(module)}/` : "";
 
   const componentFinalFolder = `${baseDirectory}/${moduleIfSetted}${normalizedComponentName}`;
 

@@ -1,7 +1,7 @@
 {
   "name": "react-modelling",
   "description": "A CLI that gives opinion to React!",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "cli.js",
   "license": "MIT",
   "repository": {

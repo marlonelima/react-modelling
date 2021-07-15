@@ -12,42 +12,42 @@ Here are the proposed structure: `under construction`
 
 ```
 src
-  - /domain // Non-reusable components
-  - /components // Reusable components
-  - /routes // Routes folder
-  - /pages // Pages application
-  - /utils // Utilities. e.g.: validators and formatters
+└───domain - Non-reusable components
+└───components - Reusable components
+└───pages - Pages folder
+└───routes - Routes folder
+└───utils - Utilities. e.g.: validators and formatters
+└───styles - Global styles
+
 ```
 
 Going ahead...
 
 ```
 src
-  - /components
-    - /Header
-      - index.tsx
-      - styles.ts
+└───components
+│   └───Header
+│       │   index.tsx
+│       │   styles.ts
 ```
 
 or using modularization
 
 ```
-  - /components
-    - /Layout
-      - /Header
-        - index.tsx
-        - styles.ts
-      - /Footer
-        - index.tsx
-        - styles.ts
-
-    - /Form
-      - /Input
-        - index.tsx
-        - styles.ts
-      - /Button
-        - index.tsx
-        - styles.ts
+src
+└───components
+│   └───Layout
+│         └───Header
+|             |   index.tsx
+|             |   style.ts
+|
+|   └───Form
+│         └───Input
+|             |   index.tsx
+|             |   style.ts
+│         └───Button
+|             |   index.tsx
+|             |   style.ts
 ```
 
 <br/>
@@ -67,7 +67,13 @@ remod page <name>
 or you can create inside a module
 
 ```
-remod page <name> -m <module-name>
+remod page <name> <module-directory>
+```
+
+Example:
+
+```
+remod page Login users/authentication
 ```
 
 <br>
@@ -80,12 +86,18 @@ To create a new component
 remod component <name>
 ```
 
-Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-reusable component will be created.
+Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default reusable component will be created.
 
 or you can create inside a module
 
 ```
-remod component <name> -m <module-name>
+remod component <name> <module-name>
+```
+
+Example:
+
+```
+remod component LoginError users/messages
 ```
 
 <br>

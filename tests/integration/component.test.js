@@ -3,7 +3,7 @@ const fs = require("fs");
 
 describe("page", () => {
   test("JAVASCRIPT - should create a non-reusable component in javascript", async () => {
-    const cli = await exec(["component mycomponent"]);
+    const cli = await exec(["component mycomponent -u"]);
 
     const isIndexCreated = await fs.existsSync(
       "src/domain/mycomponent/index.jsx"
@@ -18,7 +18,7 @@ describe("page", () => {
   });
 
   test("JAVASCRIPT - should create a reusable component", async () => {
-    const cli = await exec(["component mycomponent -r"]);
+    const cli = await exec(["component mycomponent"]);
 
     const isIndexCreated = await fs.existsSync(
       "src/components/mycomponent/index.jsx"
@@ -33,13 +33,13 @@ describe("page", () => {
   });
 
   test("JAVASCRIPT - should create a non-reusable component inside a module", async () => {
-    const cli = await exec(["component mycomponent -m mymodule"]);
+    const cli = await exec(["component mycomponent -u mymodule/mysubmodule"]);
 
     const isIndexCreated = await fs.existsSync(
-      "src/domain/mymodule/mycomponent/index.jsx"
+      "src/domain/mymodule/mysubmodule/mycomponent/index.jsx"
     );
     const isSyleCreated = await fs.existsSync(
-      "src/domain/mymodule/mycomponent/styles.js"
+      "src/domain/mymodule/mysubmodule/mycomponent/styles.js"
     );
 
     expect(isIndexCreated).toBeTruthy();
@@ -48,13 +48,13 @@ describe("page", () => {
   });
 
   test("JAVASCRIPT - should create a reusable component inside a module", async () => {
-    const cli = await exec(["component mycomponent -r -m mymodule"]);
+    const cli = await exec(["component mycomponent mymodule/mysubmodule"]);
 
     const isIndexCreated = await fs.existsSync(
-      "src/components/mymodule/mycomponent/index.jsx"
+      "src/components/mymodule/mysubmodule/mycomponent/index.jsx"
     );
     const isSyleCreated = await fs.existsSync(
-      "src/components/mymodule/mycomponent/styles.js"
+      "src/components/mymodule/mysubmodule/mycomponent/styles.js"
     );
 
     expect(isIndexCreated).toBeTruthy();

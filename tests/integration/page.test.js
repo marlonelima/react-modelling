@@ -14,13 +14,13 @@ describe("page", () => {
   });
 
   test("JAVASCRIPT - should create a new page inside a module", async () => {
-    const cli = await exec(["page mypage -m mymodule"]);
+    const cli = await exec(["page mypage mymodule/mysubmodule"]);
 
     const isIndexCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/index.jsx"
+      "src/pages/mymodule/mysubmodule/mypage/index.jsx"
     );
     const isSyleCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/styles.js"
+      "src/pages/mymodule/mysubmodule/mypage/styles.js"
     );
 
     expect(isIndexCreated).toBeTruthy();
@@ -44,30 +44,13 @@ describe("page", () => {
   test("TYPESCRIPT - should create a new page inside a module", async () => {
     await fs.writeFileSync("tsconfig.json", "");
 
-    const cli = await exec(["page mypage -m mymodule"]);
+    const cli = await exec(["page mypage mymodule/mysubmodule"]);
 
     const isIndexCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/index.tsx"
+      "src/pages/mymodule/mysubmodule/mypage/index.tsx"
     );
     const isSyleCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/styles.ts"
-    );
-
-    expect(isIndexCreated).toBeTruthy();
-    expect(isSyleCreated).toBeTruthy();
-    expect(cli.stdout).toBe("\x1B[32m OK!\n");
-  });
-
-  test("TYPESCRIPT - should create a new page inside a module", async () => {
-    await fs.writeFileSync("tsconfig.json", "");
-
-    const cli = await exec(["page mypage -m mymodule"]);
-
-    const isIndexCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/index.tsx"
-    );
-    const isSyleCreated = await fs.existsSync(
-      "src/pages/mymodule/mypage/styles.ts"
+      "src/pages/mymodule/mysubmodule/mypage/styles.ts"
     );
 
     expect(isIndexCreated).toBeTruthy();

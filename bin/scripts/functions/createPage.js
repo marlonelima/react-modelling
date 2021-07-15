@@ -1,13 +1,16 @@
 const fs = require("fs");
 const DualModels = require("../../models/dual");
-const { normalizeString } = require("../../utils/formatters");
+const {
+  normalizeString,
+  normalizeDirectory,
+} = require("../../utils/formatters");
 
 module.exports = (name, module, isTypescript) => {
   const normalizedPageName = normalizeString(name);
 
   const pagesDirectory = `src/pages`;
 
-  const moduleIfSetted = module ? `${normalizeString(module)}/` : "";
+  const moduleIfSetted = module ? `${normalizeDirectory(module)}/` : "";
 
   const pageFinalFolder = `${pagesDirectory}/${moduleIfSetted}${normalizedPageName}`;
 
