@@ -28,7 +28,7 @@ export const ${name} = () => {
 
 const YourComponent = () => (<div>React-router-dom works!!</div>)
 
-export const Routes = () => {
+export const Router = () => {
   return (
     <Router> 
       <Switch>

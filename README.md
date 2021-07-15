@@ -27,9 +27,11 @@ src
     - /Header
       - index.tsx
       - styles.ts
+```
 
 or using modularization
 
+```
   - /components
     - /Layout
       - /Header
@@ -38,6 +40,7 @@ or using modularization
       - /Footer
         - index.tsx
         - styles.ts
+
     - /Form
       - /Input
         - index.tsx
