@@ -14,6 +14,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("JAVASCRIPT - should create a reusable component", async () => {
@@ -28,6 +29,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("JAVASCRIPT - should create a non-reusable component inside a module", async () => {
@@ -42,6 +44,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("JAVASCRIPT - should create a reusable component inside a module", async () => {
@@ -56,5 +59,6 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 });

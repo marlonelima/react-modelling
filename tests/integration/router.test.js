@@ -8,6 +8,7 @@ describe("page", () => {
     const isRouterCreated = await fs.existsSync("src/routes/index.jsx");
 
     expect(isRouterCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("TYPESCRIPT - should init a new router", async () => {
@@ -18,5 +19,6 @@ describe("page", () => {
     const isRouterCreated = await fs.existsSync("src/routes/index.tsx");
 
     expect(isRouterCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 });

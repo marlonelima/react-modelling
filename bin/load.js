@@ -12,7 +12,6 @@ module.exports = (program) => {
     .option("-sm <submodule>", "create sub-module")
     .description("create an structure")
     .action((name, args) => {
-      console.log(path.resolve());
       if (args.r) {
         return create.reusableComponent(name, args.m, isTypescript);
       }

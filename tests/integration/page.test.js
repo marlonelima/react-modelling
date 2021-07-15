@@ -10,6 +10,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("JAVASCRIPT - should create a new page inside a module", async () => {
@@ -24,6 +25,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("TYPESCRIPT - should create a new page", async () => {
@@ -36,6 +38,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("TYPESCRIPT - should create a new page inside a module", async () => {
@@ -52,6 +55,7 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 
   test("TYPESCRIPT - should create a new page inside a module", async () => {
@@ -68,5 +72,6 @@ describe("page", () => {
 
     expect(isIndexCreated).toBeTruthy();
     expect(isSyleCreated).toBeTruthy();
+    expect(cli.stdout).toBe("\x1B[32m OK!\n");
   });
 });
