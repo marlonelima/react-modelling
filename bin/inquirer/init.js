@@ -1,4 +1,4 @@
-const configureController = require("../scripts/configure");
+const configureRoom = require("../scripts/configure");
 
 const inquirer = require("inquirer");
 
@@ -21,13 +21,24 @@ module.exports = (isTypescript) => {
         default: true,
         type: "confirm",
       },
+      {
+        name: "delete_react_file",
+        message:
+          "Do you want to configure SRC folder? ----------- CAUTION: App and index will be replaced",
+        default: false,
+        type: "confirm",
+      },
     ])
     .then((answers) => {
       if (answers.style === "styled-components") {
-        configureController.styledComponents(isTypescript);
+        configureRoom.styledComponents(isTypescript);
       }
       if (answers.react_router_dom) {
-        configureController.reactRouterDom(isTypescript);
+        configureRoom.reactRouterDom(isTypescript);
+      }
+
+      if (answers.delete_react_file) {
+        configureRoom.configureSrc(isTypescript);
       }
 
       console.log("\x1b[32m", "OK!", "\x1b[0m");

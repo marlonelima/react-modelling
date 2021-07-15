@@ -38,4 +38,26 @@ export const Router = () => {
   );
 }`;
   },
+
+  reactApp() {
+    return `function App() {
+  return <div>App works!</div>;
+}
+    
+export default App;
+    `;
+  },
+
+  reactIndex() {
+    return `import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+    
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);`;
+  },
 };

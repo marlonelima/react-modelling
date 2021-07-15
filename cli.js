@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const { program } = require("commander");
 
-program.version("0.0.18");
+program.version("0.0.19");
 
 require("./bin/load")(program);
 

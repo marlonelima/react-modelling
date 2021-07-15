@@ -1,6 +1,7 @@
 const addDependencies = require("./functions/addDependencies");
+const configureSrc = require("./functions/configureSrc");
 
-class ConfigureController {
+class ConfigureRoom {
   styledComponents(isTypescript) {
     if (isTypescript) {
       addDependencies("@types/styled-components", "5.1.11", true);
@@ -16,6 +17,10 @@ class ConfigureController {
 
     return addDependencies("react-router-dom", "5.2.0", false);
   }
+
+  configureSrc(isTypescript) {
+    return configureSrc(isTypescript);
+  }
 }
 
-module.exports = new ConfigureController();
+module.exports = new ConfigureRoom();
