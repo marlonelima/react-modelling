@@ -1,19 +1,21 @@
 const fs = require("fs");
 
-const TypescriptModels = require("../../models/typescript");
+const DualModels = require("../../models/dual");
 
 const { normalizeString } = require("../../utils/formatters");
 
-function create(name, module, domain = false) {
+function create(name, module, domain, isTypescript) {
   const normalizedComponentName = normalizeString(name);
-  const componentsDirectory = `src/${domain ? "domain" : "components"}`;
 
-  const componentFinalFolder = `${componentsDirectory}/${
+  const baseDirectory = `src/${domain ? "domain" : "components"}`;
+
+  const componentFinalFolder = `${baseDirectory}/${
     module ? `${normalizeString(module)}/` : ""
   }${normalizedComponentName}`;
 
-  const indexFile = `${componentFinalFolder}/index.tsx`;
-  const styledFile = `${componentFinalFolder}/styles.ts`;
+  const prefixLanguage = isTypescript ? "t" : "j";
+  const indexFile = `${componentFinalFolder}/index.${prefixLanguage}sx`;
+  const styledFile = `${componentFinalFolder}/styles.${prefixLanguage}s`;
 
   fs.mkdirSync(componentFinalFolder, {
     recursive: true,
@@ -23,15 +25,12 @@ function create(name, module, domain = false) {
     return console.log("\x1b[31m%s\x1b[0m", "Error: Component already exists!");
   }
 
-  fs.writeFileSync(
-    indexFile,
-    TypescriptModels.component(normalizedComponentName),
-    {
-      recursive: false,
-    }
-  );
+  // creating
+  fs.writeFileSync(indexFile, DualModels.component(normalizedComponentName), {
+    recursive: false,
+  });
 
-  fs.writeFileSync(styledFile, TypescriptModels.style(), {
+  fs.writeFileSync(styledFile, DualModels.style(), {
     recursive: false,
   });
 

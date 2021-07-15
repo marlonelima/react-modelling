@@ -3,20 +3,20 @@ const createRouter = require("./functions/createRouter");
 const createPage = require("./functions/createPage");
 
 class CreateController {
-  reusableComponent(name, module) {
-    return createComponent(name, module);
+  reusableComponent(name, module, isTypescript) {
+    return createComponent(name, module, isTypescript);
   }
 
-  uniqueComponent(name, module) {
-    return createComponent(name, module, true);
+  uniqueComponent(name, module, isTypescript) {
+    return createComponent(name, module, true, isTypescript);
   }
 
-  router() {
-    return createRouter();
+  router(isTypescript) {
+    return createRouter(isTypescript);
   }
 
-  page(name, module) {
-    return createPage(name, module);
+  page(name, module, isTypescript) {
+    return createPage(name, module, isTypescript);
   }
 }
 

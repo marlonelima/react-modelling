@@ -1,11 +1,13 @@
 const fs = require("fs");
 
-const TypescriptModels = require("../../models/typescript");
+const DualModels = require("../../models/dual");
 
-function create() {
+function create(isTypescript) {
   const componentsDirectory = `src/routes`;
 
-  const routerFile = `${componentsDirectory}/index.tsx`;
+  const prefixLanguage = isTypescript ? "t" : "j";
+
+  const routerFile = `${componentsDirectory}/index.${prefixLanguage}sx`;
 
   fs.mkdirSync(componentsDirectory, {
     recursive: true,
@@ -15,7 +17,8 @@ function create() {
     return console.log("\x1b[31m%s\x1b[0m", "Error: Router already exists!");
   }
 
-  fs.writeFileSync(routerFile, TypescriptModels.router(), {
+  // creating
+  fs.writeFileSync(routerFile, DualModels.router(), {
     recursive: false,
   });
 

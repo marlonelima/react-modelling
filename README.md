@@ -15,6 +15,8 @@ src
   - /domain // Non-reusable components
   - /components // Reusable components
   - /routes // Routes folder
+  - /pages // Pages application
+  - /utils // Utilities. e.g.: validators and formatters
 ```
 
 Going ahead...
@@ -75,7 +77,7 @@ To create a new component
 remod component <name>
 ```
 
-Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-usable component.
+Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-reusable component.
 
 or you can create inside a module
 

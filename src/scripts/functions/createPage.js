@@ -1,10 +1,10 @@
 const fs = require("fs");
 
-const TypescriptModels = require("../../models/typescript");
+const DualModels = require("../../models/dual");
 
 const { normalizeString } = require("../../utils/formatters");
 
-function create(name, module) {
+function create(name, module, isTypescript) {
   const normalizedPageName = normalizeString(name);
   const componentsDirectory = `src/pages`;
 
@@ -12,8 +12,10 @@ function create(name, module) {
     module ? `${normalizeString(module)}/` : ""
   }${normalizedPageName}`;
 
-  const indexFile = `${componentFinalFolder}/index.tsx`;
-  const styledFile = `${componentFinalFolder}/styles.ts`;
+  const prefixLanguage = isTypescript ? "t" : "j";
+
+  const indexFile = `${componentFinalFolder}/index.${prefixLanguage}sx`;
+  const styledFile = `${componentFinalFolder}/styles.${prefixLanguage}s`;
 
   fs.mkdirSync(componentFinalFolder, {
     recursive: true,
@@ -23,10 +25,11 @@ function create(name, module) {
     return console.log("\x1b[31m%s\x1b[0m", "Error: Page already exists!");
   }
 
-  fs.writeFileSync(indexFile, TypescriptModels.page(normalizedPageName), {
+  // creating
+  fs.writeFileSync(indexFile, DualModels.page(normalizedPageName), {
     recursive: false,
   });
-  fs.writeFileSync(styledFile, TypescriptModels.style(), {
+  fs.writeFileSync(styledFile, DualModels.style(), {
     recursive: false,
   });
 

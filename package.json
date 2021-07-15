@@ -1,6 +1,6 @@
 {
   "name": "react-modelling",
-  "version": "0.0.144",
+  "version": "0.0.145",
   "main": "cli.js",
   "license": "MIT",
   "repository": {
@@ -19,5 +19,14 @@
     "remod": "./cli.js",
     "r-modulling": "./cli.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "keywords": [
+    "react",
+    "structure",
+    "folders",
+    "folder",
+    "directory",
+    "organization",
+    "best"
+  ]
 }

@@ -1,22 +1,26 @@
 #! /usr/bin/env node
 const { program } = require("commander");
 
-program.version("0.0.144");
+const checkLanguage = require("./src/scripts/checks/language");
+program.version("0.0.145");
 
 const create = require("./src/scripts/create");
+
+const isTypescript = checkLanguage();
 
 program
   .command("component <name>")
   .option("-u", "unique component")
   .option("-r", "reusable component")
   .option("-m <module>", "create component inside a module")
+  .option("-sm <submodule>", "create sub-module")
   .description("create an structure")
   .action((name, args) => {
     if (args.r) {
-      return create.reusableComponent(name, args.m);
+      return create.reusableComponent(name, args.m, isTypescript);
     }
 
-    return create.uniqueComponent(name, args.m);
+    return create.uniqueComponent(name, args.m, isTypescript);
   });
 
 program
@@ -25,7 +29,7 @@ program
   .description("manage react-router-dom")
   .action((args) => {
     if (args.init) {
-      return create.router();
+      return create.router(isTypescript);
     }
   });
 
@@ -34,7 +38,7 @@ program
   .option("-m <module>", "create component inside a module")
   .description("manage pages of your application")
   .action((name, args) => {
-    return create.page(name, args.m);
+    return create.page(name, args.m, isTypescript);
   });
 
 program.parse();
