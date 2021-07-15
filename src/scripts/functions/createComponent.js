@@ -14,6 +14,7 @@ function create(name, module, domain, isTypescript) {
   }${normalizedComponentName}`;
 
   const prefixLanguage = isTypescript ? "t" : "j";
+
   const indexFile = `${componentFinalFolder}/index.${prefixLanguage}sx`;
   const styledFile = `${componentFinalFolder}/styles.${prefixLanguage}s`;
 

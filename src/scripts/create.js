@@ -4,7 +4,7 @@ const createPage = require("./functions/createPage");
 
 class CreateController {
   reusableComponent(name, module, isTypescript) {
-    return createComponent(name, module, isTypescript);
+    return createComponent(name, module, false, isTypescript);
   }
 
   uniqueComponent(name, module, isTypescript) {

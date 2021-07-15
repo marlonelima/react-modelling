@@ -2,7 +2,7 @@
 const { program } = require("commander");
 
 const checkLanguage = require("./src/scripts/checks/language");
-program.version("0.0.145");
+program.version("0.0.151");
 
 const create = require("./src/scripts/create");
 
