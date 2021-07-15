@@ -1,13 +1,15 @@
 {
   "name": "react-modelling",
-  "version": "0.0.151",
+  "description": "A CLI that gives opinion to React!",
+  "version": "0.0.16",
   "main": "cli.js",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/marlonelima/react-modelling"
   },
   "scripts": {
-    "main": "node cli.js"
+    "main": "node cli.js",
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "commander": "^8.0.0"

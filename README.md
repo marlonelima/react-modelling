@@ -54,7 +54,7 @@ or using modularization
 
 ### CLI Commands
 
-You can use in your terminal, the commands `remod`, `react-modelling`, `react-m` or `r-m` to call the React Modelling.
+You can use in your terminal, the aliases `remod`, `react-modelling`, `react-m` or `r-m` to call the React Modelling.
 
 #### Page
 
@@ -80,7 +80,7 @@ To create a new component
 remod component <name>
 ```
 
-Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-reusable component.
+Use the flag `-r` to generate an reusable component and `-u` for a non-reusable component. By default non-reusable component will be created.
 
 or you can create inside a module
 
