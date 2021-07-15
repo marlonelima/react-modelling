@@ -9,9 +9,9 @@ function create(name, module, domain, isTypescript) {
 
   const baseDirectory = `src/${domain ? "domain" : "components"}`;
 
-  const componentFinalFolder = `${baseDirectory}/${
-    module ? `${normalizeString(module)}/` : ""
-  }${normalizedComponentName}`;
+  const moduleIfSetted = module ? `${normalizeString(module)}/` : "";
+
+  const componentFinalFolder = `${baseDirectory}/${moduleIfSetted}${normalizedComponentName}`;
 
   const prefixLanguage = isTypescript ? "t" : "j";
 
