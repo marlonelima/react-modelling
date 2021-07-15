@@ -5,7 +5,7 @@ module.exports = (args) => {
   return new Promise((resolve) => {
     exec(
       `node ${path.resolve("./cli")} ${args.join(" ")}`,
-      { cwd: "." },
+      { cwd: "temp_test" },
       (error, stdout, stderr) => {
         resolve({
           code: error && error.code ? error.code : 0,

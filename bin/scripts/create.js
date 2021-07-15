@@ -7,7 +7,7 @@ class CreateController {
     return createComponent(name, module, false, isTypescript);
   }
 
-  uniqueComponent(name, module, isTypescript) {
+  domainComponent(name, module, isTypescript) {
     return createComponent(name, module, true, isTypescript);
   }
 

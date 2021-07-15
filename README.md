@@ -56,6 +56,20 @@ src
 
 You can use in your terminal, the aliases `remod`, `react-modelling`, `react-m` or `r-m` to call the React Modelling.
 
+<br/>
+
+#### Configure project
+
+To configure the project
+
+```
+remod init
+```
+
+After this you should execute `yarn` or `npm install`
+
+<br>
+
 #### Page
 
 To create a new page

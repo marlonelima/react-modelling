@@ -1,6 +1,7 @@
 tests
 coverage
 .github
+temp_test
 
 jest.config.js
 .gitignore

@@ -1,6 +1,8 @@
 const create = require("./scripts/create");
 const checkLanguage = require("./scripts/verifications/language");
 
+const init = require("./inquirer/init");
+
 const isTypescript = checkLanguage();
 
 module.exports = (program) => {
@@ -11,7 +13,7 @@ module.exports = (program) => {
     .description("create an structure")
     .action((name, module, options) => {
       if (options.u) {
-        return create.uniqueComponent(name, module, isTypescript);
+        return create.domainComponent(name, module, isTypescript);
       }
 
       return create.reusableComponent(name, module, isTypescript);
@@ -33,4 +35,9 @@ module.exports = (program) => {
     .action((name, module) => {
       return create.page(name, module, isTypescript);
     });
+
+  program
+    .command("init")
+    .description("starts your application")
+    .action(() => init(isTypescript));
 };

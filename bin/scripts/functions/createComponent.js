@@ -1,5 +1,7 @@
 const fs = require("fs");
 const DualModels = require("../../models/dual");
+const path = require("path");
+
 const {
   normalizeString,
   normalizeDirectory,
@@ -8,16 +10,26 @@ const {
 module.exports = (name, module, unique, isTypescript) => {
   const normalizedComponentName = normalizeString(name);
 
-  const baseDirectory = `src/${unique ? "domain" : "components"}`;
+  const baseDirectory = path.join("src", unique ? "domain" : "components");
 
-  const moduleIfSetted = module ? `${normalizeDirectory(module)}/` : "";
+  const moduleIfSetted = module ? `${normalizeDirectory(module)}` : "";
 
-  const componentFinalFolder = `${baseDirectory}/${moduleIfSetted}${normalizedComponentName}`;
+  const componentFinalFolder = path.join(
+    baseDirectory,
+    moduleIfSetted,
+    normalizedComponentName
+  );
 
   const prefixLanguage = isTypescript ? "t" : "j";
 
-  const indexFile = `${componentFinalFolder}/index.${prefixLanguage}sx`;
-  const styledFile = `${componentFinalFolder}/styles.${prefixLanguage}s`;
+  const indexFile = path.join(
+    componentFinalFolder,
+    `index.${prefixLanguage}sx`
+  );
+  const styledFile = path.join(
+    componentFinalFolder,
+    `styles.${prefixLanguage}s`
+  );
   //
   //
   //
@@ -28,7 +40,11 @@ module.exports = (name, module, unique, isTypescript) => {
   });
 
   if (fs.existsSync(indexFile)) {
-    return console.log("\x1b[31m%s\x1b[0m", "Error: Component already exists!");
+    return console.log(
+      "\x1b[31m%s\x1b[0m",
+      "Error: Component already exists!",
+      "\x1b[0m"
+    );
   }
 
   fs.writeFileSync(indexFile, DualModels.component(normalizedComponentName), {
@@ -39,5 +55,5 @@ module.exports = (name, module, unique, isTypescript) => {
     recursive: false,
   });
 
-  return console.log("\x1b[32m", "OK!");
+  return console.log("\x1b[32m", "OK!", "\x1b[0m");
 };

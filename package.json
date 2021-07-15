@@ -1,7 +1,7 @@
 {
   "name": "react-modelling",
   "description": "A CLI that gives opinion to React!",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "main": "cli.js",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,8 @@
     "test": "jest --runInBand"
   },
   "dependencies": {
-    "commander": "^8.0.0"
+    "commander": "^8.0.0",
+    "inquirer": "^8.1.2"
   },
   "bin": {
     "react-modelling": "./cli.js",
@@ -32,6 +33,7 @@
     "best"
   ],
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "inquirer-test": "^2.0.1"
   }
 }
