@@ -37,7 +37,7 @@ module.exports = (program) => {
     });
 
   program
-    .command("init")
+    .command("teste")
     .description("starts your application")
     .action(() => init(isTypescript));
 };

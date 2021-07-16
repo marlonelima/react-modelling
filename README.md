@@ -2,9 +2,17 @@
 
 `This library is only preview at the moment`
 <br/><br/>
+Next.js and Sass support will be available soon
+
+<br/>
+
+#### How to install?
 
 `npm i -g react-modelling`
+
 <br>
+
+#### The problem
 
 What is the problem in React? Your projects quickly and easily can become a trash. Disorganization reigns because there is no a main pattern to React. And in a big team? Nobody can understand that structure. And what about writing boilerplates to create components or router all the time? React Modelling solves all of these organization problems using the CLI.
 

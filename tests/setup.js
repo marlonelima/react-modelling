@@ -6,11 +6,12 @@ beforeAll(() => {
 
 beforeEach(() => {
   fs.rmSync("temp_test/src", { force: true, recursive: true });
+  fs.rmSync("src", { force: true, recursive: true });
   fs.rmSync("tsconfig.json", { force: true, recursive: true });
 });
 
 afterAll(() => {
-  fs.rmSync("temp_test/src", { recursive: true, force: true });
+  fs.rmSync("src", { force: true, recursive: true });
   fs.rmSync("tsconfig.json", { force: true, recursive: true });
   fs.rmSync("temp_test", { recursive: true, force: true });
 });

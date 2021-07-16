@@ -39,7 +39,7 @@ module.exports = (name, module, unique, isTypescript) => {
     recursive: true,
   });
 
-  if (fs.existsSync(indexFile)) {
+  if (fs.existsSync(indexFile) || fs.existsSync(styledFile)) {
     return console.log(
       "\x1b[31m%s\x1b[0m",
       "Error: Component already exists!",
