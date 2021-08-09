@@ -24,8 +24,11 @@ src
 └───components - Reusable components
 └───pages - Pages folder
 └───routes - Routes folder
+└───constants - Variables folder. e.g.: theme variable
 └───utils - Utilities. e.g.: validators and formatters
 └───styles - Global styles
+└───assets - Assets folder. e.g: icons and images
+└───@types - Typescript Interfaces and Types
 
 ```
 
